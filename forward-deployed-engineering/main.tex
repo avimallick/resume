@@ -1,0 +1,159 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.58in,bottom=0.58in,left=0.62in,right=0.62in]{geometry}
+\usepackage[
+  colorlinks=true,
+  urlcolor=ink,
+  linkcolor=ink
+]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+
+\definecolor{ink}{HTML}{172033}
+\definecolor{muted}{HTML}{526070}
+\definecolor{rule}{HTML}{D8DEE6}
+\definecolor{accent}{HTML}{184E77}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\familydefault}{\sfdefault}
+\setlist[itemize]{
+  leftmargin=1.2em,
+  topsep=2pt,
+  itemsep=1.5pt,
+  parsep=0pt,
+  label=\textcolor{accent}{\small\textbullet}
+}
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\vspace{-2pt}{\color{rule}\titlerule}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\resumeHeader}[6]{
+  \begin{center}
+    {\fontsize{22}{24}\selectfont\bfseries\color{ink} #1}\\[-1pt]
+    {\normalsize\bfseries\color{accent} Forward Deployed AI Engineer}\\[4pt]
+    {\small\color{muted} #2 \quad | \quad #3 \quad | \quad \href{mailto:#4}{#4}}\\[-1pt]
+    {\small\color{muted} \href{#5}{linkedin.com/in/avinash-mallick} \quad | \quad \href{#6}{github.com/avimallick}}
+  \end{center}
+  \vspace{-4pt}
+}
+
+\newcommand{\role}[4]{
+  \vspace{2pt}
+  {\bfseries\color{ink} #1} \hfill {\small\color{muted} #2}\\
+  {\itshape\color{muted} #3} \hfill {\small\itshape\color{muted} #4}
+}
+
+\newcommand{\project}[3]{
+  \vspace{2pt}
+  {\bfseries\color{ink} #1} \hfill {\small\color{muted} #2}\\
+  {\itshape\color{muted} #3}
+}
+
+\newcommand{\summary}[1]{
+  \begingroup
+  \color{ink}
+  \linespread{1.03}\selectfont
+  #1
+  \endgroup
+}
+
+\newcommand{\skillrow}[2]{
+  \begingroup
+  \raggedright
+  {\bfseries\color{ink}#1:} #2\par\vspace{2pt}
+  \endgroup
+}
+
+\begin{document}
+
+\resumeHeader
+  {Avinash Mallick}
+  {London, UK}
+  {(+44) 07741014524}
+  {avimallick@gmail.com}
+  {https://www.linkedin.com/in/avinash-mallick-b272b6214/}
+  {https://github.com/avimallick}
+
+\section*{Forward Deployed AI Engineering Profile}
+\summary{AI engineer who embeds with founders and product teams to turn fuzzy operational problems into shipped, monitored AI systems. I take agentic workflows from whiteboard to production --- owning the messy parts: scoping with stakeholders, designing for reliability, and instrumenting evaluation so the system survives contact with real users. Experience spans venture-backed startups, an IBM/UCL code-modernization research collaboration, and enterprise cloud platforms, with a focus on legacy code transformation and reliable human-in-the-loop automation.}
+
+\section*{Technical Skills}
+\skillrow{Languages}{Python, TypeScript, JavaScript, C\#, Java, SQL}
+\skillrow{LLM Systems}{OpenAI/Anthropic-compatible APIs, LangGraph, RAG, eval design, Langfuse, pgvector, human-in-the-loop workflows}
+\skillrow{Backend \& Infra}{FastAPI, Pydantic, PostgreSQL, pgvector, Redis, Docker, Caddy, AWS EC2, Cloudflare Pages, GitHub Actions}
+\skillrow{Enterprise}{React, Angular, .NET Core, ASP.NET, Entity Framework, Azure Cloud, IBM Cloud, v-net peering}
+
+\section*{Experience}
+\role{Post Urban Ventures}{Oct 2025 -- Present}{AI Systems Engineer - Consultant}{London, UK}
+\begin{itemize}
+  \item Worked directly with founders and product teams to identify operational bottlenecks, scope AI workflows, and ship production-ready prototypes across venture-backed products including Chelo.ai and VFree.
+  \item Built modular AI microservices using FastAPI, Python, LangGraph, PostgreSQL, pgvector, Redis, and Docker, enabling rapid deployment of LLM-powered workflows into startup environments.
+  \item Embedded with insurance brokers to map an unstructured, WhatsApp-based claims workflow, then scoped and shipped a human-in-the-loop agent routing policy questions through retrieval and agent verification (Twilio, production observability) --- keeping a broker approval gate on every customer-facing reply.
+  \item Developed RAG pipelines, knowledge graph integrations, and backend orchestration patterns for customer-facing AI products deployed on AWS, Cloudflare, and self-hosted infrastructure.
+\end{itemize}
+
+\role{Converso}{Nov 2025 -- Present}{AI Engineer}{London, UK}
+\begin{itemize}
+  \item Designed and deployed LangGraph-based conversational agents for CRM automation, integrating structured ingestion, retrieval, and customer-specific knowledge workflows for enterprise datasets.
+  \item Deployed a self-hosted Langfuse observability stack, turning agent traces, failure cases, latency issues, and human-review outcomes into debugging signals and evaluation workflows for production AI systems.
+  \item Converted real user failure modes from production conversations into repeatable evaluation cases, improving prompt, retrieval, and escalation behavior across agent workflows.
+  \item Built document processing and RAG pipelines using embeddings, vector search, validation layers, and human-review patterns to improve trust in AI-generated customer support workflows.
+  \item Partnered with product and engineering stakeholders to translate ambiguous automation requirements into scoped, shipped AI features with monitoring and rollout considerations.
+\end{itemize}
+
+\role{IBM}{June 2025 -- Sep 2025}{Software Engineer, Contract - Joint UCL-IBM Collaboration}{London, UK}
+\begin{itemize}
+  \item Built an agentic code modernization system for Java codebases, using RAG, LangGraph, FastAPI, Pydantic, and IBM Granite models to detect anti-patterns, propose refactors, and generate explainable code changes.
+  \item Designed a multi-agent workflow with scanner, refactor strategist, code transformer, reviewer, and explainer agents, adding compile/test gating to improve reliability of AI-generated refactors.
+  \item Evaluated the system on 10,000+ lines of Java code, achieving 85\% anti-pattern detection precision and reducing manual modernization effort by an estimated 60\%.
+\end{itemize}
+
+\newpage
+\role{Eurofins Scientific - Eurofins IT Delivery Centre}{June 2023 -- Sep 2024}{Associate Software Engineer}{Bangalore, India}
+\begin{itemize}
+  \item Delivered full-stack eCommerce solutions handling 25,000+ monthly transactions, improving checkout conversion rates by 12\% through optimized UI/UX implementations using C\#, ASP.NET, and SQL.
+  \item Spearheaded Azure cloud segregation initiative serving 15,000+ users across 8 global regions, reducing deployment time by 45\% and infrastructure costs by \pounds30,000 annually.
+  \item Engineered cross-tenant networking solutions using Azure v-net peering, enabling secure data flow for 200+ microservices with 99.8\% reliability.
+\end{itemize}
+
+\section*{Selected AI Engineering Work}
+\project{Agentic COBOL to Python Migration}{Langflow, Python, Semi-Formal Verification, LLMs}{Legacy modernization agent}
+\begin{itemize}
+  \item Created AI-powered code migration framework achieving 78\% automated conversion accuracy on legacy COBOL systems containing 50,000+ lines of code.
+  \item Won DataStax Hacking Agents Hackathon ``Best Use Case of Langflow'' among 150+ participants from across Europe.
+\end{itemize}
+
+\project{TopoIndex Python Library}{Python, RDKit, NetworkX, Poetry, PyPI, GitHub Actions}{Molecular analysis package}
+\begin{itemize}
+  \item Built and published an open-source molecular-analysis library (PyPI, CI via GitHub Actions) for QSAR feature extraction, designed for batch processing of large compound sets in cheminformatics pipelines.
+  \item Implemented validated topological-index algorithms against published reference values, with vectorized graph traversal running \textasciitilde55\% faster than a naïve NetworkX baseline on 1,000+ compound batches.
+\end{itemize}
+
+\section*{Achievements}
+\begin{itemize}
+  \item \textbf{Oxford Enspire Guest Lecturer:} Delivered lecture on AI-assisted coding, spec-driven development, and practical AI prototyping for founders at Christ Church College, University of Oxford.
+  \item \textbf{Google DeepMind $\times$ Cactus Compute Hackathon - 2nd Prize:} Built hybrid local/cloud agentic AI system for privacy-sensitive workflows.
+  \item \textbf{AI Tooling in SDLC - Best Use Case of ACI.dev:} Built AI anti-pattern remediation tool using local LLMs, MCP, and GitHub codebase interaction.
+\end{itemize}
+
+\section*{Education}
+\textbf{University College London} \hfill Sept 2024 -- Sept 2025\\
+\textit{Master of Science, Software Systems Engineering} \hfill London, UK\\
+{\small\color{muted}\textbf{Grade:} Merit \textbar{} \textbf{Coursework:} Engineering of Data Analysis, Applied Deep Learning, Software Development Practices}
+
+\vspace{2pt}
+\textbf{Hindustan Institute of Technology and Science} \hfill July 2019 -- April 2023\\
+\textit{Bachelor of Technology (Honours), Computer Science and Engineering} \hfill Chennai, India\\
+{\small\color{muted}\textbf{Coursework:} Data Structures, Algorithms, Machine Learning, Cloud Computing, Compiler Theory, Distributed Systems}
+
+\end{document}
